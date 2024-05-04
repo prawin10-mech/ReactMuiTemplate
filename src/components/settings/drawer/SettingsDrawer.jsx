@@ -24,10 +24,10 @@ import Block from "./Block.jsx";
 import BadgeDot from "./BadgeDot";
 import ToggleButton from "./ToggleButton";
 import ModeOptions from "./ModeOptions";
-import LayoutOptions from "./LayoutOptions";
-import StretchOptions from "./StretchOptions";
-import ContrastOptions from "./ContrastOptions";
-import DirectionOptions from "./DirectionOptions";
+// import LayoutOptions from "./LayoutOptions";
+// import StretchOptions from "./StretchOptions";
+// import ContrastOptions from "./ContrastOptions";
+// import DirectionOptions from "./DirectionOptions";
 import FullScreenOptions from "./FullScreenOptions";
 import ColorPresetsOptions from "./ColorPresetsOptions";
 
@@ -128,24 +128,24 @@ export default function SettingsDrawer() {
             <ModeOptions />
           </Block>
 
-          <Block title="Contrast">
+          {/* <Block title="Contrast">
             <ContrastOptions />
-          </Block>
+          </Block> */}
 
-          <Block title="Direction">
+          {/* <Block title="Direction">
             <DirectionOptions />
-          </Block>
+          </Block> */}
 
-          <Block title="Layout">
+          {/* <Block title="Layout">
             <LayoutOptions />
-          </Block>
+          </Block> */}
 
-          <Block
+          {/* <Block
             title="Stretch"
             tooltip="Only available at large resolutions > 1600px (xl)"
           >
             <StretchOptions />
-          </Block>
+          </Block> */}
 
           <Block title="Presets">
             <ColorPresetsOptions />

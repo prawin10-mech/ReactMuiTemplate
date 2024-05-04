@@ -1,26 +1,35 @@
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+
 // theme
 import ThemeProvider from "./theme";
 import { ThemeSettings, SettingsProvider } from "./components/settings";
 import { MotionLazyContainer } from "./components/animate";
 import ThemeLocalization from "./locales";
-import { Provider } from "react-redux";
 import { store } from "./store";
+import Router from "./routes";
+import { AuthProvider } from "./auth/JwtContext";
 
 function App() {
   return (
     <>
-      Hello
-      <Provider store={store}>
-        <SettingsProvider>
-          <MotionLazyContainer>
-            <ThemeProvider>
-              <ThemeLocalization>
-                <ThemeSettings>Hello</ThemeSettings>
-              </ThemeLocalization>
-            </ThemeProvider>
-          </MotionLazyContainer>
-        </SettingsProvider>
-      </Provider>
+      <AuthProvider>
+        <Provider store={store}>
+          <SettingsProvider>
+            <BrowserRouter>
+              <MotionLazyContainer>
+                <ThemeProvider>
+                  <ThemeLocalization>
+                    <ThemeSettings>
+                      <Router />
+                    </ThemeSettings>
+                  </ThemeLocalization>
+                </ThemeProvider>
+              </MotionLazyContainer>
+            </BrowserRouter>
+          </SettingsProvider>
+        </Provider>
+      </AuthProvider>
     </>
   );
 }
